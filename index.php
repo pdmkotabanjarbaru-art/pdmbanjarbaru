@@ -21,7 +21,8 @@ if (isset($_GET['page'])) {
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>SIPPINDA</title>
+    <title>PDMKotaBanjarbaru</title>
+    <link rel="icon" type="image/png" href="assets/img/muhammadiyah.png">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
