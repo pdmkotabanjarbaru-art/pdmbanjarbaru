@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+$halaman = $_GET['halaman'] ?? null;
 $isLogin = $_SESSION['login'] ?? false;
 $role    = $_SESSION['role'] ?? null;
 
@@ -34,10 +35,21 @@ if (isset($_GET['page'])) {
    HOME UMUM (TANPA SIDEBAR)
    =============================== */
 if ($page === 'home_umum') {
+
     include "umum/template/header.php";
-    include "umum/home.php";
+
+    switch ($halaman) {
+        case 'profil_pdm':
+            include "umum/profil.php";
+            break;
+
+        default:
+            include "umum/home.php";
+            break;
+    }
+
     include "umum/template/footer.php";
-    return;
+    exit; // penting!
 }
 ?>
 

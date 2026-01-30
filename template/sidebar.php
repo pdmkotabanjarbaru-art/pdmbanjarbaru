@@ -9,14 +9,10 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?page=home">
         <div class="sidebar-brand-icon">
-            <img src="assets/img/kalsel.png" alt="Logo Kemenperin"
+            <img src="assets/img/muhammadiyah.png" alt="Logo Kemenperin"
                 style="height: 40px; width: auto; background-color: white; padding: 5px; border-radius: 20px;">
         </div>
-        <div class="sidebar-brand-text mx-3">SIPPINDA</div>
-        <div class="sidebar-brand-icon">
-            <img src="assets/img/kemenperin.png" alt="Logo Kemenperin"
-                style="height: 40px; width: auto; background-color: white; padding: 5px; border-radius: 20px;">
-        </div>
+        <div class="sidebar-brand-text mx-3">PDMbjb</div>
     </a>
 
     <!-- Divider -->
@@ -47,15 +43,15 @@
         Data I
     </div>
 
-    <?php if ($role == 'umum'): ?>
+
         <!-- ROLE UMUM -->
-        <li class="nav-item <?= $currentPage == 'profil_perusahaan' ? 'active' : '' ?>">
-            <a class="nav-link <?= $currentPage == 'profil_perusahaan' ? 'active' : '' ?>" href="?page=profil_perusahaan">
+        <li class="nav-item <?= $currentPage == 'profil' ? 'active' : '' ?>">
+            <a class="nav-link <?= $currentPage == 'profil' ? 'active' : '' ?>" href="?page=profil">
                 <i class="fas fa-fw fa-building"></i>
-                <span>Profil Perusahaan</span>
+                <span>Profil</span>
             </a>
         </li>
-    <?php endif; ?>
+ 
 
     <?php if ($role == 'admin' || $role == 'superadmin' ||$role == 'kadis'): ?>
         <!-- ROLE ADMIN & SUPERADMIN -->

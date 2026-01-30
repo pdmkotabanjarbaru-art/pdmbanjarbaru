@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda | PD Muhammadiyah Kota Banjarbaru</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; }
         .hero { background: linear-gradient(135deg, #0d6efd, #198754); color: #fff; padding: 80px 20px; }
@@ -12,8 +5,6 @@
         .section-title { font-weight: 600; margin-bottom: 20px; }
         footer { background: #f8f9fa; padding: 20px 0; font-size: 14px; }
     </style>
-</head>
-<body>
 
 
 <!-- Hero Section -->
@@ -21,14 +12,6 @@
     <div class="container">
         <h1>Selamat Datang di PD Muhammadiyah Kota Banjarbaru</h1>
         <p class="lead mt-3">Gerakan Islam Berkemajuan untuk Mewujudkan Masyarakat Islam yang Sebenar-benarnya</p>
-    </div>
-</section>
-
-<!-- Profil Singkat -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="section-title">Profil Singkat</h2>
-        <p>Pimpinan Daerah Muhammadiyah Kota Banjarbaru merupakan unsur pelaksana kepemimpinan Muhammadiyah di tingkat kota yang bertugas menggerakkan dakwah, pendidikan, sosial, dan kemasyarakatan sesuai dengan prinsip Islam Berkemajuan.</p>
     </div>
 </section>
 

@@ -10,7 +10,7 @@ if (!class_exists('Database')) {
 
         //hostlaptop
         private $host = "localhost";
-        private $db_name = "sippinda";
+        private $db_name = "pdmbjb";
         private $username = "root";
         private $password = "";
 

@@ -7,11 +7,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
+        <li class="nav-item"><a class="nav-link active" href="?page=home_umum">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="?halaman=profil_pdm">Profil</a></li>
         <li class="nav-item"><a class="nav-link" href="#">AUM</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Berita</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+        <li class="nav-item"><a class="nav-link" href="?page=home_admin">Login</a></li>
       </ul>
     </div>
   </div>
