@@ -56,7 +56,7 @@
 
 <body id="page-top">
     <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-dark bg-gradient-danger topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow bg-header">
 
         <!-- Sidebar Toggle (Topbar) -->
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

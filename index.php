@@ -26,6 +26,7 @@ if (isset($_GET['page'])) {
     <link rel="icon" type="image/png" href="assets/img/muhammadiyah.png">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body id="page-top">
@@ -96,6 +97,14 @@ if ($page === 'home_umum') {
 
                     case 'delete_pengguna':
                         include "pengguna/hapus.php";
+                        break;
+
+                    case 'tambah_berita':
+                        include "admin/berita/tambah.php";
+                        break;
+
+                    case 'tampil_berita':
+                        include "admin/berita/tampil.php";
                         break;
 
                     default:

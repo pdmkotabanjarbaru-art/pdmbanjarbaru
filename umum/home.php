@@ -1,3 +1,22 @@
+    <?php
+    include_once 'koneksi.php';
+
+try {
+    $db = new Database();
+    $conn = $db->getConnection();
+
+     // query ambil berita terbaru
+    $query = "SELECT * FROM berita ORDER BY tanggal DESC";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+
+    $berita = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+} catch (PDOException $e) {
+    die("Error: " . $e->getMessage());
+}
+    ?>
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; }
         .hero { background: linear-gradient(135deg, #0d6efd, #198754); color: #fff; padding: 80px 20px; }
@@ -58,38 +77,36 @@
         </p>
 
         <div class="row">
-            <?php if (mysqli_num_rows($query) > 0): ?>
-                <?php while ($row = mysqli_fetch_assoc($query)): ?>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <?= htmlspecialchars($row['judul']); ?>
-                                </h5>
-                                <small class="text-muted">
-                                    <?= date('d M Y', strtotime($row['tanggal'])); ?>
-                                </small>
-                                <p class="card-text mt-2">
-                                    <?= substr(strip_tags($row['ringkasan']), 0, 100); ?>...
-                                </p>
-                            </div>
-                            <div class="card-footer bg-white border-0">
-                                <a href="index.php?page=detail_berita&id=<?= $row['id']; ?>" 
-                                   class="btn btn-sm btn-success">
-                                    Baca Selengkapnya
-                                </a>
-                            </div>
-                        </div>
+    <?php if (!empty($berita)): ?>
+        <?php foreach ($berita as $row): ?>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <?= htmlspecialchars($row['judul']); ?>
+                        </h5>
+                        <small class="text-muted">
+                            <?= date('d M Y', strtotime($row['tanggal'])); ?>
+                        </small>
                     </div>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <div class="col-12">
-                    <div class="alert alert-info">
-                        Belum ada berita yang dipublikasikan.
+                    <div class="card-footer bg-white border-0">
+                        <a href="index.php?page=detail_berita&id=<?= $row['id']; ?>" 
+                           class="btn btn-sm btn-success">
+                            Baca Selengkapnya
+                        </a>
                     </div>
                 </div>
-            <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <div class="col-12">
+            <div class="alert alert-info">
+                Belum ada berita yang dipublikasikan.
+            </div>
         </div>
+    <?php endif; ?>
+</div>
+
 
         <div class="text-center mt-4">
             <a href="index.php?page=berita" class="btn btn-success">

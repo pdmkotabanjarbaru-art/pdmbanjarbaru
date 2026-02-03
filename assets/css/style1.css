@@ -20,8 +20,8 @@ body {
 /* Sidebar */
 .sidebar {
     width: 250px;
-    background-color: #e9f7ef; /* hijau muda */
-    color: #2d6a4f;
+    background-color: #e7f1ff; /* biru muda */
+    color: #1e3a8a;
     padding: 1rem;
     overflow-y: auto;
     flex-shrink: 0;
@@ -33,7 +33,7 @@ body {
     font-weight: bold;
     font-size: 1.2rem;
     text-decoration: none;
-    color: #2d6a4f;
+    color: #1e3a8a;
     display: block;
     text-align: center;
     margin-bottom: 1rem;
@@ -41,7 +41,7 @@ body {
 
 /* Divider */
 .sidebar-divider {
-    border-top: 1px solid #d1f2eb;
+    border-top: 1px solid #cfe0ff;
     margin: 1rem 0;
 }
 
@@ -50,7 +50,7 @@ body {
     font-size: 0.85rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: #40916c;
+    color: #2563eb;
     margin-top: 1rem;
 }
 
@@ -65,15 +65,15 @@ body {
     display: flex;
     align-items: center;
     padding: 0.6rem 1rem;
-    color: #2d6a4f;
+    color: #1e3a8a;
     text-decoration: none;
     border-radius: 6px;
     transition: background-color 0.2s ease;
 }
 
 .sidebar .nav-link:hover {
-    background-color: #d8f3dc; /* hijau muda hover */
-    color: #1b4332;
+    background-color: #dbeafe; /* biru muda hover */
+    color: #1e40af;
 }
 
 .sidebar .nav-link i {
@@ -82,10 +82,11 @@ body {
 
 /* Active Link */
 .sidebar .nav-item.active .nav-link {
-    background-color: #b7e4c7; /* hijau muda aktif */
-    color: #1b4332;
+    background-color: #bfdbfe; /* biru muda aktif */
+    color: #1e40af;
     font-weight: 600;
 }
+
 
 
 /* Main Content */
