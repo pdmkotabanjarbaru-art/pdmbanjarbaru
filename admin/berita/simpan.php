@@ -1,6 +1,4 @@
 <?php
-
-
 include_once 'koneksi.php';
 
 try {
@@ -10,6 +8,11 @@ try {
     $judul   = $_POST['judul'];
     $isi     = $_POST['isi'];
     $tanggal = date('Y-m-d');
+
+    
+    if ($judul == '' || $isi == '') {
+        die("Judul atau isi tidak boleh kosong");
+    }
 
     // 🔹 Generate ID BERITA (BRT-001)
     $cek = $conn->query("SELECT id_berita FROM berita ORDER BY id DESC LIMIT 1");
@@ -37,6 +40,7 @@ try {
     ]);
 
     header("Location: index.php?page=berita&status=success");
+    exit;
 
 } catch (PDOException $e) {
     die("Error: " . $e->getMessage());

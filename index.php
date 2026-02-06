@@ -107,6 +107,10 @@ if ($page === 'home_umum') {
                         include "admin/berita/tampil.php";
                         break;
 
+                    case 'simpan_berita':
+                        include "admin/berita/simpan.php";
+                        break;
+
                     default:
                         include "admin/home.php";
                         break;
