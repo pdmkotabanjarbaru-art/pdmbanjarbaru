@@ -76,35 +76,57 @@ try {
             PD Muhammadiyah Kota Banjarbaru.
         </p>
 
+        <?php
+            function getThumbnail($html) {
+                preg_match('/<img.+src=["\'](.+?)["\'].*>/i', $html, $matches);
+                return $matches[1] ?? null;
+            }
+            ?>
+
         <div class="row">
-    <?php if (!empty($berita)): ?>
-        <?php foreach ($berita as $row): ?>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <?= htmlspecialchars($row['judul']); ?>
-                        </h5>
-                        <small class="text-muted">
-                            <?= date('d M Y', strtotime($row['tanggal'])); ?>
-                        </small>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <a href="index.php?halaman=detail_berita&id=<?= $row['id']; ?>" 
-                           class="btn btn-sm btn-success">
-                            Baca Selengkapnya
-                        </a>
-                    </div>
+<?php if (!empty($berita)): ?>
+    <?php foreach ($berita as $row): ?>
+
+        <?php 
+            $thumbnail = getThumbnail($row['isi']); 
+        ?>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+
+                <?php if ($thumbnail): ?>
+                    <img src="<?= $thumbnail; ?>" 
+                         class="card-img-top"
+                         style="height:200px; object-fit:cover;">
+                <?php endif; ?>
+
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?= htmlspecialchars($row['judul']); ?>
+                    </h5>
+
+                    <small class="text-muted">
+                        <?= date('d M Y', strtotime($row['tanggal'])); ?>
+                    </small>
                 </div>
-            </div>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <div class="col-12">
-            <div class="alert alert-info">
-                Belum ada berita yang dipublikasikan.
+
+                <div class="card-footer bg-white border-0">
+                    <a href="index.php?halaman=detail_berita&id=<?= $row['id']; ?>" 
+                       class="btn btn-sm btn-success">
+                        Baca Selengkapnya
+                    </a>
+                </div>
+
             </div>
         </div>
-    <?php endif; ?>
+    <?php endforeach; ?>
+<?php else: ?>
+    <div class="col-12">
+        <div class="alert alert-info">
+            Belum ada berita yang dipublikasikan.
+        </div>
+    </div>
+<?php endif; ?>
 </div>
 
 
