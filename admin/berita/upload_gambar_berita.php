@@ -38,5 +38,5 @@ if (!move_uploaded_file($file['tmp_name'], $uploadDir . $filename)) {
 }
 
 echo json_encode([
-    'location' => '/admin/uploads/berita/' . $filename
+    'location' => '/pdmbanjarbaru/admin/uploads/berita/' . $filename
 ]);

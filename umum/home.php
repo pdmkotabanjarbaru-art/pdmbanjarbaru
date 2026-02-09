@@ -90,7 +90,7 @@ try {
                         </small>
                     </div>
                     <div class="card-footer bg-white border-0">
-                        <a href="index.php?page=detail_berita&id=<?= $row['id']; ?>" 
+                        <a href="index.php?halaman=detail_berita&id=<?= $row['id']; ?>" 
                            class="btn btn-sm btn-success">
                             Baca Selengkapnya
                         </a>

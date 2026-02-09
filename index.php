@@ -43,6 +43,9 @@ if ($page === 'home_umum') {
         case 'profil_pdm':
             include "umum/profil.php";
             break;
+        case 'detail_berita':
+            include "umum/detail.php";
+            break;
 
         default:
             include "umum/home.php";
@@ -105,10 +108,6 @@ if ($page === 'home_umum') {
 
                     case 'tampil_berita':
                         include "admin/berita/tampil.php";
-                        break;
-
-                    case 'simpan_berita':
-                        include "admin/berita/simpan.php";
                         break;
 
                     default:

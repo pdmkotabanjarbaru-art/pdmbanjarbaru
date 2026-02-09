@@ -1,20 +1,27 @@
 <?php
-include_once 'koneksi.php';
+ob_start(); // ⬅️ buffer output (anti headers already sent)
+
+require_once '../../koneksi.php';
 
 try {
+
     $db = new Database();
     $conn = $db->getConnection();
 
-    $judul   = $_POST['judul'];
-    $isi     = $_POST['isi'];
+    // ==========================
+    // AMBIL DATA
+    // ==========================
+    $judul   = $_POST['judul'] ?? '';
+    $isi     = $_POST['isi'] ?? '';
     $tanggal = date('Y-m-d');
 
-    
-    if ($judul == '' || $isi == '') {
-        die("Judul atau isi tidak boleh kosong");
+    if (trim($judul) === '' || trim($isi) === '') {
+        throw new Exception("Judul atau isi tidak boleh kosong");
     }
 
-    // 🔹 Generate ID BERITA (BRT-001)
+    // ==========================
+    // GENERATE ID BRT-001
+    // ==========================
     $cek = $conn->query("SELECT id_berita FROM berita ORDER BY id DESC LIMIT 1");
     $last = $cek->fetch(PDO::FETCH_ASSOC);
 
@@ -27,7 +34,9 @@ try {
 
     $id_berita = 'BRT-' . str_pad($nomor, 3, '0', STR_PAD_LEFT);
 
-    // 🔹 Simpan ke database
+    // ==========================
+    // SIMPAN DATABASE
+    // ==========================
     $sql = "INSERT INTO berita (id_berita, judul, isi, tanggal)
             VALUES (:id_berita, :judul, :isi, :tanggal)";
 
@@ -39,9 +48,17 @@ try {
         ':tanggal'   => $tanggal
     ]);
 
-    header("Location: index.php?page=berita&status=success");
+    // ==========================
+    // REDIRECT
+    // ==========================
+    header("Location: ../../index.php?page=tampil_berita");
     exit;
 
-} catch (PDOException $e) {
-    die("Error: " . $e->getMessage());
+} catch (Throwable $e) {
+
+    echo "<h4>Gagal menyimpan berita</h4>";
+    echo "<pre>".$e->getMessage()."</pre>";
+
 }
+
+ob_end_flush();

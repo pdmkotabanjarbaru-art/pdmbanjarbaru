@@ -10,7 +10,7 @@
 <div class="container mt-4">
     <h2 class="mb-4">Tulis Berita</h2>
 
-    <form action="?page=simpan_berita" method="POST">
+    <form action="admin/berita/simpan.php" method="POST">
         <!-- Judul -->
         <div class="mb-3">
             <label class="form-label">Judul Berita</label>
@@ -33,17 +33,43 @@
 </div>
 
 <script src="https://cdn.tiny.cloud/1/qg6hjqpr8yhzsh5gh3d52zrc5ikateg6tnh1wblnr98z9wpj/tinymce/6/tinymce.min.js"></script>
-
 <script>
 tinymce.init({
-    selector: '#editor',
-    height: 400,
-    plugins: 'image link lists code table',
-    toolbar: 'undo redo | bold italic | bullist numlist | image link | code',
-    images_upload_url: 'http://localhost/pdmbanjarbaru/admin/berita/upload_gambar_berita.php',
-    automatic_uploads: true
+  selector: '#editor',
+  height: 400,
+  plugins: 'image link lists code table',
+  toolbar: 'undo redo | bold italic | bullist numlist | image link | code',
+
+  images_upload_handler: (blobInfo) => new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://localhost/pdmbanjarbaru/admin/berita/upload_gambar_berita.php');
+
+      xhr.onload = () => {
+          if (xhr.status !== 200) {
+              reject('HTTP Error: ' + xhr.status);
+              return;
+          }
+
+          const json = JSON.parse(xhr.responseText);
+
+          if (!json || !json.location) {
+              reject('Invalid JSON: ' + xhr.responseText);
+              return;
+          }
+
+          resolve(json.location);
+      };
+
+      const formData = new FormData();
+      formData.append('file', blobInfo.blob());
+
+      xhr.send(formData);
+  })
 });
 </script>
+
+
+
 
 </body>
 </html>
