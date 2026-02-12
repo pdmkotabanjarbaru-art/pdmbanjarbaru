@@ -14,7 +14,32 @@ try {
 } catch (PDOException $e) {
     die("Error: " . $e->getMessage());
 }
+
 ?>
+
+<?php if (isset($_GET['status'])): ?>
+
+    <?php if ($_GET['status'] == 'updated'): ?>
+        <div class="alert alert-success" id="autoAlert">
+            Berita berhasil diperbarui.
+        </div>
+    <?php endif; ?>
+
+    <?php if ($_GET['status'] == 'success'): ?>
+        <div class="alert alert-success" id="autoAlert">
+            Berita berhasil ditambahkan.
+        </div>
+    <?php endif; ?>
+
+    <?php if ($_GET['status'] == 'deleted'): ?>
+        <div class="alert alert-danger" id="autoAlert">
+            Berita berhasil dihapus.
+        </div>
+    <?php endif; ?>
+
+<?php endif; ?>
+
+
 <div class="container-fluid">
     <h1 class="h3 mb-4 text-gray-800">Manajemen Berita</h1>
 
@@ -48,7 +73,7 @@ try {
                                            class="btn btn-warning btn-sm">
                                             Edit
                                         </a>
-                                        <a href="hapus_berita.php?id=<?= $row['id']; ?>" 
+                                        <a href="index.php?page=hapus_berita&id=<?= $row['id']; ?>" 
                                            class="btn btn-danger btn-sm"
                                            onclick="return confirm('Yakin ingin menghapus berita ini?')">
                                             Hapus
@@ -69,3 +94,14 @@ try {
         </div>
     </div>
 </div>
+
+<script>
+setTimeout(function(){
+    let alertBox = document.getElementById("autoAlert");
+    if(alertBox){
+        alertBox.style.transition = "opacity 0.5s";
+        alertBox.style.opacity = "0";
+        setTimeout(() => alertBox.remove(), 500);
+    }
+}, 3000);
+</script>

@@ -18,7 +18,7 @@ if(!$data){
 
 <h3>Edit Berita</h3>
 
-<form action="berita/update.php" method="POST">
+<form action="admin/berita/update.php" method="POST">
 <input type="hidden" name="id" value="<?= $data['id']; ?>">
 
 <div class="mb-3">

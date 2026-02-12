@@ -51,7 +51,7 @@ try {
     // ==========================
     // REDIRECT
     // ==========================
-    header("Location: ../../index.php?page=tampil_berita");
+    header("Location: ../../index.php?page=tampil_berita&status=success");
     exit;
 
 } catch (Throwable $e) {

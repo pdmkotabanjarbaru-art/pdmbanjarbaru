@@ -113,6 +113,9 @@ if ($page === 'home_umum') {
                     case 'edit_berita':
                         include "admin/berita/edit.php";
                         break;
+                    case 'hapus_berita':
+                        include "admin/berita/hapus.php";
+                        break;
 
                     default:
                         include "admin/home.php";

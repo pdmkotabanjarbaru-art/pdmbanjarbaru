@@ -1,5 +1,5 @@
 <?php
-include_once 'koneksi.php';
+include_once '../../koneksi.php';
 
 try{
 
@@ -21,7 +21,7 @@ $stmt->execute([
     ':id'=>$id
 ]);
 
-header("Location: ../index.php?page=berita&status=updated");
+header("Location: ../../index.php?page=tampil_berita&status=updated");
 exit;
 
 }catch(PDOException $e){
