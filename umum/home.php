@@ -40,27 +40,30 @@ try {
         <h2 class="section-title">Program & Amal Usaha Muhammadiyah</h2>
         <div class="row">
             <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Bidang Pendidikan</h5>
-                        <p class="card-text">Mengelola dan mengembangkan sekolah serta lembaga pendidikan Muhammadiyah di Kota Banjarbaru.</p>
+                <a href="index.php?halaman=aumpendidikan" class="text-decoration-none text-dark">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bidang Pendidikan</h5>
+                            <p class="card-text">
+                                Mengelola dan mengembangkan sekolah serta lembaga pendidikan Muhammadiyah di Kota Banjarbaru.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+
             <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Bidang Sosial & Kesehatan</h5>
-                        <p class="card-text">Melayani umat melalui kegiatan sosial, kemanusiaan, dan layanan kesehatan.</p>
+                <a href="index.php?halaman=programdakwah" class="text-decoration-none text-dark">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bidang Dakwah</h5>
+                            <p class="card-text">
+                                Menyebarkan nilai-nilai Islam melalui pengajian, pembinaan umat, dan media dakwah.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Bidang Dakwah</h5>
-                        <p class="card-text">Menyebarkan nilai-nilai Islam melalui pengajian, pembinaan umat, dan media dakwah.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -131,9 +134,48 @@ try {
 
 
         <div class="text-center mt-4">
-            <a href="index.php?page=berita" class="btn btn-success">
+            <a href="index.php?halaman=berita" class="btn btn-success">
                 Lihat Semua Berita
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- Lokasi Sekretariat -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-4">Lokasi Sekretariat</h2>
+
+        <div class="row align-items-center">
+            
+            <!-- Informasi Alamat -->
+            <div class="col-md-5 mb-4">
+                <h5>Sekretariat PD Muhammadiyah Kota Banjarbaru</h5>
+                <p>
+                    Beralamat di:<br>
+                    Komplek Masjid Hj. Nuriyah Jl. A.Yani Km. 32 <br>
+                    Loktabat Banjarbaru – Kalimantan Selatan
+                </p>
+
+                <a href="https://www.google.com/maps/search/Masjid+Hj.+Nurriyah+Banjarbaru"
+                   target="_blank"
+                   class="btn btn-success">
+                   Lihat di Google Maps
+                </a>
+            </div>
+
+            <!-- Embed Google Maps -->
+            <div class="col-md-7">
+                <div class="ratio ratio-16x9">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Masjid+Hj.+Nurriyah+Banjarbaru&output=embed"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

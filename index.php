@@ -46,6 +46,12 @@ if ($page === 'home_umum') {
         case 'detail_berita':
             include "umum/detail.php";
             break;
+        case 'aumpendidikan':
+            include "umum/aumpendidikan.php";
+            break;
+        case 'programdakwah':
+            include "umum/dakwah.php";
+            break;
 
         default:
             include "umum/home.php";
