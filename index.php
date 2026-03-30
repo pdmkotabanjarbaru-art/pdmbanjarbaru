@@ -27,6 +27,7 @@ if (isset($_GET['page'])) {
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/pdmbanjarbaru/assets/fa/css/all.min.css">
 </head>
 
 <body id="page-top">
@@ -38,6 +39,7 @@ if (isset($_GET['page'])) {
 if ($page === 'home_umum') {
 
     include "umum/template/header.php";
+
 
     switch ($halaman) {
         case 'profil_pdm':
@@ -54,6 +56,7 @@ if ($page === 'home_umum') {
             break;
 
         default:
+        case'home_umum';
             include "umum/home.php";
             break;
     }
@@ -140,6 +143,7 @@ if ($page === 'home_umum') {
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 <script src="assets/js/sb-admin-2.min.js"></script>
+
 
 </body>
 </html>

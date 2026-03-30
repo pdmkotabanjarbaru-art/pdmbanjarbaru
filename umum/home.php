@@ -16,60 +16,56 @@ try {
 } catch (PDOException $e) {
     die("Error: " . $e->getMessage());
 }
-    ?>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; }
-        .hero { background: linear-gradient(135deg, #0d6efd, #198754); color: #fff; padding: 80px 20px; }
-        .hero h1 { font-weight: 700; }
-        .section-title { font-weight: 600; margin-bottom: 20px; }
-        footer { background: #f8f9fa; padding: 20px 0; font-size: 14px; }
-    </style>
+?>
 
 
 <!-- Hero Section -->
+<!-- Hero -->
 <section class="hero text-center">
     <div class="container">
         <h1>Selamat Datang di PD Muhammadiyah Kota Banjarbaru</h1>
-        <p class="lead mt-3">Gerakan Islam Berkemajuan untuk Mewujudkan Masyarakat Islam yang Sebenar-benarnya</p>
+        <p class="lead mt-3">
+            Gerakan Islam Berkemajuan untuk Mewujudkan Masyarakat Islam yang Sebenar-benarnya
+        </p>
     </div>
 </section>
 
 <!-- Program & Amal Usaha -->
-<section class="py-5 bg-light">
+<section class="py-5">
     <div class="container">
         <h2 class="section-title">Program & Amal Usaha Muhammadiyah</h2>
+
         <div class="row">
-            <div class="col-md-4 mb-3">
+
+            <div class="col-md-4 mb-4">
                 <a href="index.php?halaman=aumpendidikan" class="text-decoration-none text-dark">
-                    <div class="card h-100 shadow-sm hover-card">
+                    <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">Bidang Pendidikan</h5>
                             <p class="card-text">
-                                Mengelola dan mengembangkan sekolah serta lembaga pendidikan Muhammadiyah di Kota Banjarbaru.
+                                Mengelola dan mengembangkan sekolah serta lembaga pendidikan Muhammadiyah.
                             </p>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-4">
                 <a href="index.php?halaman=programdakwah" class="text-decoration-none text-dark">
-                    <div class="card h-100 shadow-sm hover-card">
+                    <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">Bidang Dakwah</h5>
                             <p class="card-text">
-                                Menyebarkan nilai-nilai Islam melalui pengajian, pembinaan umat, dan media dakwah.
+                                Menyebarkan nilai-nilai Islam melalui pembinaan umat dan media dakwah.
                             </p>
                         </div>
                     </div>
                 </a>
             </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
-
 <!-- Berita -->
 <section class="py-5 bg-light">
     <div class="container">
@@ -183,6 +179,5 @@ try {
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+
+
